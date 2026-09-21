@@ -12,7 +12,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenOrder, onScrollToMenu }) => {
   const { currentTimeFormatted, timeZoneAbbr, isOpen, statusBadgeText } = useAustinTime();
 
   return (
-    <section id="hero" className="relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-[#121212] pt-6 pb-16">
+    <section id="hero" className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-[#121212] pt-6 sm:pt-10 pb-12 sm:pb-16">
       {/* Background Image of sizzling street tacos al pastor on comal */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <img
@@ -25,8 +25,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenOrder, onScrollToMenu }) => {
         <div className="absolute inset-0 bg-gradient-to-r from-[#171717]/90 via-transparent to-[#171717]/80" />
       </div>
 
-      {/* Floating Taco Icons with subtle animation */}
-      <div className="absolute top-12 left-[6%] z-10 pointer-events-none select-none hidden md:block animate-float-taco">
+      {/* Floating Taco Icons with subtle animation - ONLY on ultra-wide screens (2xl) so they never overlap hero text on standard PC/laptop */}
+      <div className="absolute top-16 left-8 2xl:left-12 z-10 pointer-events-none select-none hidden 2xl:block animate-float-taco">
         <div className="bg-[#262626]/85 backdrop-blur-md border border-[#FFEB3B]/40 p-3 rounded-2xl shadow-xl flex items-center gap-2.5">
           <span className="text-3xl">🌮</span>
           <div>
@@ -36,7 +36,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenOrder, onScrollToMenu }) => {
         </div>
       </div>
 
-      <div className="absolute bottom-28 right-[6%] z-10 pointer-events-none select-none hidden lg:block animate-float-taco-reverse">
+      <div className="absolute bottom-28 right-8 2xl:right-12 z-10 pointer-events-none select-none hidden 2xl:block animate-float-taco-reverse">
         <div className="bg-[#262626]/85 backdrop-blur-md border border-[#C62828]/60 p-3.5 rounded-2xl shadow-2xl flex items-center gap-3">
           <span className="text-3xl">🔥</span>
           <div>
@@ -46,7 +46,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenOrder, onScrollToMenu }) => {
         </div>
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
         
         {/* Urgency Pill: USA Timing Zone (Austin, TX) & Today's Orders */}
         <div className="inline-flex flex-wrap items-center justify-center gap-1.5 sm:gap-3 bg-neutral-900/95 border border-neutral-700/80 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-sm font-medium text-white mb-4 sm:mb-6 shadow-xl">
@@ -87,12 +87,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenOrder, onScrollToMenu }) => {
         </div>
 
         {/* Main Street Hero Headline: AUSTIN'S FAVORITE STREET TACOS */}
-        <h1 className="font-anton text-3xl sm:text-5xl md:text-7xl lg:text-8xl tracking-tight text-white uppercase leading-[0.98] max-w-5xl mb-4 drop-shadow-2xl px-2">
+        <h1 className="font-anton text-3xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight text-white uppercase leading-[1] max-w-4xl mb-4 drop-shadow-2xl px-2">
           AUSTIN'S <span className="text-[#FFEB3B] underline decoration-[#C62828] decoration-4 md:decoration-8 underline-offset-8">FAVORITE</span> STREET TACOS
         </h1>
 
         {/* Subtitle: Handmade Tortillas • Trompo Al Pastor • Salsas Made Fresh Daily */}
-        <p className="font-poppins text-sm sm:text-lg md:text-2xl font-semibold text-neutral-200 max-w-3xl mb-4 tracking-wide px-2">
+        <p className="font-poppins text-sm sm:text-base md:text-xl font-medium text-neutral-200 max-w-3xl mb-6 tracking-wide px-2">
           Handmade Tortillas <span className="text-[#FFEB3B]">•</span> Trompo Al Pastor <span className="text-[#FFEB3B]">•</span> Salsas Made Fresh Daily
         </p>
 

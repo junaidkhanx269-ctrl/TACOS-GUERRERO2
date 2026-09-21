@@ -15,7 +15,6 @@ export const Header: React.FC<HeaderProps> = ({ onOpenOrder, cartCount, cartSavi
     { name: 'Menu', href: '#menu' },
     { name: 'Specials', href: '#specials' },
     { name: 'Salsa Bar', href: '#salsa-bar' },
-    { name: 'Loyalty Club', href: '#loyalty' },
     { name: 'Reviews', href: '#reviews' },
     { name: 'Location & Hours', href: '#location' },
   ];
@@ -42,13 +41,13 @@ export const Header: React.FC<HeaderProps> = ({ onOpenOrder, cartCount, cartSavi
   return (
     <header id="main-site-header" className="bg-[#1C1C1C]/95 backdrop-blur-md border-b border-neutral-800 sticky top-0 z-40 transition-all duration-200 shadow-lg">
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-14 sm:h-20 gap-2 sm:gap-4 flex-nowrap">
+        <div className="flex items-center justify-between h-16 sm:h-20 gap-3 sm:gap-4 flex-nowrap">
           
           {/* Logo + 4.8★ Badge */}
           <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             <a href="#hero" className="group flex flex-col items-start leading-none text-decoration-none shrink-0">
               <div className="flex items-baseline gap-1 sm:gap-1.5">
-                <span className="font-anton text-xl sm:text-3xl lg:text-4xl text-[#FFEB3B] tracking-wider drop-shadow-md group-hover:text-white transition-colors whitespace-nowrap">
+                <span className="font-anton text-xl sm:text-2xl lg:text-3xl text-[#FFEB3B] tracking-wider drop-shadow-md group-hover:text-white transition-colors whitespace-nowrap">
                   TACOS GUERRERO
                 </span>
                 <span className="text-[9px] sm:text-xs uppercase px-1.5 py-0.5 rounded font-black bg-[#C62828] text-white tracking-widest shrink-0">
@@ -77,8 +76,8 @@ export const Header: React.FC<HeaderProps> = ({ onOpenOrder, cartCount, cartSavi
             </a>
           </div>
 
-          {/* Desktop Navigation Links */}
-          <nav className="hidden xl:flex items-center gap-6 text-sm font-semibold text-neutral-300 shrink-0 whitespace-nowrap">
+          {/* Desktop Navigation Links: Visible on PC & Laptop (lg and above) */}
+          <nav className="hidden lg:flex items-center gap-4 xl:gap-7 text-xs lg:text-sm font-semibold text-neutral-300 shrink-0 whitespace-nowrap">
             {desktopNavLinks.map((link) => (
               <button
                 key={link.name}
@@ -92,11 +91,11 @@ export const Header: React.FC<HeaderProps> = ({ onOpenOrder, cartCount, cartSavi
 
           {/* Right Action Buttons */}
           <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
-            {/* Phone quick link for ultra-wide screens */}
+            {/* Phone quick link for desktop screens */}
             <a
               href={`tel:${BUSINESS_INFO.phoneRaw}`}
               id="header-phone-btn"
-              className="hidden 2xl:inline-flex items-center gap-1.5 text-xs font-bold text-neutral-200 hover:text-[#FFEB3B] px-3 py-2 rounded-lg bg-neutral-800/80 border border-neutral-700 hover:border-neutral-500 transition-colors shrink-0 whitespace-nowrap"
+              className="hidden xl:inline-flex items-center gap-1.5 text-xs font-bold text-neutral-200 hover:text-[#FFEB3B] px-3 py-2 rounded-lg bg-neutral-800/80 border border-neutral-700 hover:border-neutral-500 transition-colors shrink-0 whitespace-nowrap"
             >
               <Phone className="w-3.5 h-3.5 text-[#FFEB3B]" />
               <span>(512) 939-2308</span>
@@ -145,17 +144,17 @@ export const Header: React.FC<HeaderProps> = ({ onOpenOrder, cartCount, cartSavi
             <button
               onClick={onOpenOrder}
               id="header-order-tacos-cta"
-              className="hidden sm:flex animate-pulse-hook font-anton bg-[#FFEB3B] hover:bg-yellow-300 text-[#C62828] border-2 border-[#C62828] text-sm md:text-base px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl shadow-lg items-center gap-1.5 cursor-pointer transform transition active:scale-95 uppercase tracking-wide font-black shrink-0 whitespace-nowrap"
+              className="hidden sm:flex animate-pulse-hook font-anton bg-[#FFEB3B] hover:bg-yellow-300 text-[#C62828] border-2 border-[#C62828] text-xs sm:text-sm md:text-base px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl shadow-lg items-center gap-1.5 cursor-pointer transform transition active:scale-95 uppercase tracking-wide font-black shrink-0 whitespace-nowrap"
             >
               <Sparkles className="w-4 h-4 fill-[#C62828] text-[#C62828]" />
               <span>ORDER TACOS - $1.50</span>
             </button>
 
-            {/* Mobile & Tablet Menu Toggle (Always accessible and visible) */}
+            {/* Mobile & Tablet Menu Toggle (Hidden on desktop lg+) */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               id="mobile-menu-toggle"
-              className="xl:hidden p-1.5 sm:p-2 rounded-lg sm:rounded-xl bg-neutral-800 text-neutral-200 hover:text-white hover:bg-neutral-700 shrink-0 cursor-pointer"
+              className="lg:hidden p-1.5 sm:p-2 rounded-lg sm:rounded-xl bg-neutral-800 text-neutral-200 hover:text-white hover:bg-neutral-700 shrink-0 cursor-pointer"
               aria-label="Toggle navigation menu"
             >
               {mobileMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <MenuIcon className="w-5 h-5 sm:w-6 sm:h-6" />}
@@ -163,9 +162,9 @@ export const Header: React.FC<HeaderProps> = ({ onOpenOrder, cartCount, cartSavi
           </div>
         </div>
 
-        {/* Dropdown Menu for Mobile & Tablets (below XL) */}
+        {/* Dropdown Menu for Mobile & Small Tablets (below lg) */}
         {mobileMenuOpen && (
-          <div id="mobile-nav-menu" className="xl:hidden py-4 border-t border-neutral-800 bg-[#171717] space-y-2">
+          <div id="mobile-nav-menu" className="lg:hidden py-4 border-t border-neutral-800 bg-[#171717] space-y-2">
             <div className="grid grid-cols-2 gap-2 pb-3 border-b border-neutral-800">
               <a
                 href={`tel:${BUSINESS_INFO.phoneRaw}`}
