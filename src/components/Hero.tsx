@@ -49,7 +49,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenOrder, onScrollToMenu }) => {
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
         
         {/* Urgency Pill: USA Timing Zone (Austin, TX) & Today's Orders */}
-        <div className="inline-flex flex-wrap items-center justify-center gap-2 sm:gap-3 bg-neutral-900/95 border border-neutral-700/80 px-4 py-2 rounded-full text-xs sm:text-sm font-medium text-white mb-6 shadow-xl">
+        <div className="inline-flex flex-wrap items-center justify-center gap-1.5 sm:gap-3 bg-neutral-900/95 border border-neutral-700/80 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-sm font-medium text-white mb-4 sm:mb-6 shadow-xl">
           <div className={`flex items-center gap-1.5 font-bold ${isOpen ? 'text-emerald-400' : 'text-amber-400'}`}>
             <span className="relative flex h-2.5 w-2.5">
               <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${isOpen ? 'bg-emerald-400' : 'bg-amber-400'}`}></span>
@@ -60,26 +60,26 @@ export const Hero: React.FC<HeroProps> = ({ onOpenOrder, onScrollToMenu }) => {
           <span className="text-neutral-500">•</span>
           <div className="flex items-center gap-1.5 text-neutral-300 font-semibold">
             <Clock className="w-3.5 h-3.5 text-[#FFEB3B]" />
-            <span>Austin Time: <strong className="text-white">{currentTimeFormatted} {timeZoneAbbr}</strong></span>
+            <span>Austin: <strong className="text-white">{currentTimeFormatted} {timeZoneAbbr}</strong></span>
           </div>
           <span className="text-neutral-500 hidden sm:inline">•</span>
           <div className="flex items-center gap-1.5 text-[#FFEB3B] font-bold">
             <Flame className="w-4 h-4 fill-amber-500 text-amber-500 animate-bounce" />
-            <span>{BUSINESS_INFO.todayOrdersCount} people ordered today</span>
+            <span>{BUSINESS_INFO.todayOrdersCount} ordered today</span>
           </div>
         </div>
 
-        {/* PRO TIP 1: Big Yellow Badges with Red Border - Pulsing Animation (HOOK FOR OWNER) */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-6 w-full max-w-2xl px-2">
-          <div className="street-badge-yellow animate-pulse-hook px-4 sm:px-6 py-2.5 rounded-xl text-center w-full sm:w-auto flex-1">
-            <div className="text-[10px] sm:text-xs tracking-widest uppercase font-black">TOP RATED IN EAST AUSTIN</div>
+        {/* PRO TIP 1: Big Yellow Badges with Red Border - Pulsing Animation */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-4 mb-4 sm:mb-6 w-full max-w-2xl px-2">
+          <div className="street-badge-yellow animate-pulse-hook px-3.5 sm:px-6 py-2 sm:py-2.5 rounded-xl text-center w-full sm:w-auto flex-1">
+            <div className="text-[9px] sm:text-xs tracking-widest uppercase font-black">TOP RATED IN EAST AUSTIN</div>
             <div className="text-base sm:text-xl md:text-2xl lg:text-3xl font-anton tracking-wide">
               ⭐ 381+ 5-STAR REVIEWS
             </div>
           </div>
 
-          <div className="street-badge-yellow animate-pulse-hook px-4 sm:px-6 py-2.5 rounded-xl text-center w-full sm:w-auto flex-1">
-            <div className="text-[10px] sm:text-xs tracking-widest uppercase font-black">AUTHENTIC STREET PRICING</div>
+          <div className="street-badge-yellow animate-pulse-hook px-3.5 sm:px-6 py-2 sm:py-2.5 rounded-xl text-center w-full sm:w-auto flex-1">
+            <div className="text-[9px] sm:text-xs tracking-widest uppercase font-black">AUTHENTIC STREET PRICING</div>
             <div className="text-base sm:text-xl md:text-2xl lg:text-3xl font-anton tracking-wide">
               🌮 $1.50 TACOS EVERY DAY!
             </div>
