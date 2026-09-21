@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-guerrero-red: #C62828;
+    --color-guerrero-darkred: #8E0000;
+    --color-avocado-green: #33691E;
+    --color-bright-green: #2E7D32;
+    --color-corn-yellow: #FFEB3B;
+    --color-deep-yellow: #FBC02D;
+    --color-charcoal: #212121;
+    --color-charcoal-dark: #171717;
+    --color-charcoal-card: #262626;
+  }
+
+  body {
+    background-color: #171717;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+.font-anton {
+  font-family: 'Anton', Impact, sans-serif;
+  letter-spacing: 0.03em;
+}
+
+.font-oswald {
+  font-family: 'Oswald', sans-serif;
+}
+
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Street Art & Vibrant Badges */
+.street-title {
+  font-family: 'Anton', Impact, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-shadow: 2px 2px 0px #000000, 4px 4px 0px rgba(198, 40, 40, 0.4);
+}
+
+.street-badge-yellow {
+  background-color: #FFEB3B;
+  color: #C62828;
+  border: 3px solid #C62828;
+  box-shadow: 0 4px 0 #8E0000, 0 8px 20px rgba(255, 235, 59, 0.35);
+  font-weight: 900;
+}
+
+.street-badge-red {
+  background-color: #C62828;
+  color: #FFEB3B;
+  border: 3px solid #FFEB3B;
+  box-shadow: 0 4px 0 #8E0000, 0 8px 20px rgba(198, 40, 40, 0.4);
+  font-weight: 900;
+}
+
+/* Animations */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: 200%;
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 0 #8E0000, 0 0 0 rgba(255, 235, 59, 0.4);
+  }
+  50% {
+    transform: scale(1.04);
+    box-shadow: 0 6px 0 #8E0000, 0 0 24px rgba(255, 235, 59, 0.7);
+  }
+}
+
+.animate-pulse-hook {
+  animation: pulse-subtle 2s ease-in-out infinite;
+}
+
+@keyframes float-taco {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(4deg); }
+}
+
+.animate-float-taco {
+  animation: float-taco 4s ease-in-out infinite;
+}
+
+.animate-float-taco-reverse {
+  animation: float-taco 5s ease-in-out infinite reverse;
+}
+
+/* Comal Sizzle Effect */
+@keyframes sizzle-smoke {
+  0% { opacity: 0.3; transform: translateY(0px) scale(1); }
+  50% { opacity: 0.6; transform: translateY(-8px) scale(1.05); }
+  100% { opacity: 0.3; transform: translateY(0px) scale(1); }
+}
+
+.sizzle-glow {
+  animation: sizzle-smoke 3s ease-in-out infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+::-webkit-scrollbar-thumb {
+  background: #C62828;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FFEB3B;
+}

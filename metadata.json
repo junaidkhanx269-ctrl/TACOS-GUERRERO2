@@ -1,0 +1,6 @@
+{
+  "name": "Tacos Guerrero Austin",
+  "description": "Auténticos Tacos Callejeros in East Austin, TX. Famous $1.50 street tacos, handmade tortillas, trompo al pastor, and fresh salsas since 2010.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
